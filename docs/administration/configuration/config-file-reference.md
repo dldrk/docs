@@ -489,8 +489,11 @@ Rundeck can be in `active` or `passive` execution mode.
 - `active` mode: Jobs, scheduled Jobs, and adhoc executions can be run.
 - `passive` mode: No Jobs or adhoc executions can be run.
 
+Scenarios where Rundeck starts up in `passive` mode may be due to: license key was uninstalled, or property `rundeck.executionMode=passive` was set.
+
 Setting Rundeck to `passive` mode prevents users from running anything on the
 system and is useful when managing Rundeck server clusters.
+Already running jobs will continue until finished, and scheduled jobs will not be queued nor failed execution messages seen in logs.
 
 ### Project Configuration Storage settings
 
